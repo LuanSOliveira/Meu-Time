@@ -1,0 +1,19 @@
+@import '../../styles/abstracts/variaveis';
+
+.CardPais{
+    background: $background-card;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0.5px 0.5px 1px 1px rgba(0,0,0,0.1);
+    cursor: pointer;
+    width: 200px;
+    height: 160px;
+
+    img{
+        width: 130px;
+        height: 85px;
+    }
+}

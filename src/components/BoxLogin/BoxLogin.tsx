@@ -6,18 +6,17 @@ import { NavigateFunction, useNavigate } from 'react-router-dom';
 
 const BoxLogin = () => {
     const [login, setLogin] = useState<string>('')
-    const {usuarioLogado, setUsuarioLogado} = useContext(AppContext)
+    const {setUsuarioLogado} = useContext(AppContext)
 
     const navegar: NavigateFunction = useNavigate()
 
     function AtualizaUsuarioLogado(valida:boolean, infoUsuario:IUsuario):void{
         if(valida){
             setUsuarioLogado(infoUsuario)
-            console.log(usuarioLogado)
             navegar('/Menu')
         }
         else{
-            alert("Informe uma 'Key' válida!")
+            //alert("Informe uma 'Key' válida!")
         }
 
     }
@@ -30,7 +29,6 @@ const BoxLogin = () => {
         })
         .then(response => response.json())
         .then((data) => {
-            console.log(data)
             let validar:boolean = false
             let usuario:IUsuario = {email : '', chave: '', requisicoes: {atual : 0, limite : 0}}
             const resposta = data.response
@@ -42,7 +40,6 @@ const BoxLogin = () => {
                             chave: login, 
                             requisicoes: {atual : 100 - resposta.requests.current, limite : resposta.requests.limit_day}
                           }
-                console.log(usuario)
             }
             AtualizaUsuarioLogado(validar,usuario)
         })

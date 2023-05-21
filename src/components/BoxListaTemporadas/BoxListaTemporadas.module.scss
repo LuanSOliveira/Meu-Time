@@ -1,0 +1,21 @@
+@import '../../styles/abstracts/variaveis';
+
+.BoxListaTemporadas{
+    padding: 0.5rem;
+
+    .SubBoxListaTemporadas{
+        background: $background-padrao;
+        padding: 1rem 0.5rem;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.2);
+        color: $fonte-padrao;
+        font-size: 18px;
+
+        .ListaDeTemporadas{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+}
