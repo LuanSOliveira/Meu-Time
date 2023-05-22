@@ -82,7 +82,7 @@ const BoxEstatisticas = () => {
 
     return(
         <div className={styles.BoxEstatisticas}>
-            <div className={styles.SubBoxEstatisticas}>
+            <div className={styles.SubBoxEstatisticas} data-aos="fade-up">
                 <section className={styles.SecVoltar}>
                     <button onClick={FecharEstatisticas}>Voltar</button>
                 </section>

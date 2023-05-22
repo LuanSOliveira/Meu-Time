@@ -16,7 +16,7 @@ const BoxLogin = () => {
             navegar('/Menu')
         }
         else{
-            //alert("Informe uma 'Key' válida!")
+            alert("Informe uma 'Key' válida!")
         }
 
     }
@@ -47,7 +47,7 @@ const BoxLogin = () => {
     }
 
     return(
-        <div className={styles.BoxLogin}>
+        <div className={styles.BoxLogin} data-aos="zoom-in">
             <h1 className={styles.Titulo}>Meu Time</h1>
             <form className={styles.Formulario} onSubmit={(e) => FazerLogin(e)}>
                 <input 

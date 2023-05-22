@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/aos": "^3.0.4",
+    "aos": "^2.3.4",
     "apexcharts": "^3.40.0",
     "dom": "^0.0.3",
     "react": "^18.2.0",

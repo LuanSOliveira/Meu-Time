@@ -55,7 +55,7 @@ const BoxInfoPesquisa = () => {
 
     return(
         <div className={styles.BoxInfoPesquisa}>
-            <div className={styles.SubBoxInfoPesquisa}>
+            <div className={styles.SubBoxInfoPesquisa} data-aos="fade-right" data-aos-duration="1500">
                 <div className={styles.BoxInfo}>
                     <div className={styles.InfoPais}>
                         <p>País: </p>

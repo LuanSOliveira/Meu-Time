@@ -2,6 +2,8 @@
 
 .BoxInfoPesquisa{
     padding: 0.5rem;
+    display: flex;
+    justify-content: center;
 
     .SubBoxInfoPesquisa{
         background: $background-padrao;
@@ -13,6 +15,8 @@
         box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.2);
         color: $fonte-padrao;
         font-size: 18px;
+        width: 100vw;
+        max-width: 1024px;
 
         .BoxInfo{
             
@@ -53,6 +57,9 @@
                 cursor: pointer;
                 border: none;
                 border-radius: 5px;
+                &:hover{
+                    background: #fff;
+                }
             }
         }
 
@@ -64,6 +71,31 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+        }
+    }
+}
+
+@media (min-width: 1024px){
+    .BoxInfoPesquisa{
+        .SubBoxInfoPesquisa{
+            font-size: 25px;
+            .BoxInfo{
+                .InfoPais{
+                    img{
+                        width: 30px;
+                        height: 28px;
+                    }
+                }
+                .InfoLiga{
+                    img{
+                        width: 28px;
+                        height: 30px;
+                    }
+                }
+                .LimparSelecao{
+                    font-size: 25px;
+                }
+            }
         }
     }
 }

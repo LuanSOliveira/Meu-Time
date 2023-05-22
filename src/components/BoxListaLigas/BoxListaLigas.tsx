@@ -10,7 +10,7 @@ const BoxListaLigas = () => {
 
     return(
         <div className={styles.BoxListaLigas}>
-            <div className={styles.SubBoxListaLigas}>
+            <div className={styles.SubBoxListaLigas} data-aos="fade-down">
                 <h2 className={styles.Titulo}>Selecione um País:</h2>
                 <input 
                     type="text" 

@@ -9,7 +9,7 @@ const BoxListaTimes = () => {
 
     return(
         <div className={styles.BoxListaTimes}>
-            <div className={styles.SubBoxListaTimes}>
+            <div className={styles.SubBoxListaTimes} data-aos="fade-down">
                 <h2 className={styles.Titulo}>Selecione um Time:</h2>
                 <input 
                     type="text" 

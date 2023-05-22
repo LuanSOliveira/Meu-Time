@@ -126,7 +126,7 @@ export const estatisticasTime: IEstatisticas = {
         "61-75": 10,
         "76-90": 8,
         "91-105": 3,
-        "106-120": null
+        "106-120": 0
     },
     formacao: "4-2-3-1",
     jogadores: [

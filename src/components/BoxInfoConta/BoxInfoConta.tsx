@@ -14,7 +14,7 @@ const BoxInfoConta = () => {
 
     return(
         <div className={styles.BoxInfoConta}>
-            <div className={styles.SubBoxInfoConta}>
+            <div className={styles.SubBoxInfoConta} data-aos="fade-right">
                 <img 
                     src="https://www.api-football.com/public/img/home1/hero-banner.png" 
                     alt="Baner Football" 

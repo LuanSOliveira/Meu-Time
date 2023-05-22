@@ -2,6 +2,8 @@
 
 .BoxInfoConta{
     padding: 0.5rem;
+    display: flex;
+    justify-content: center;
 
     .SubBoxInfoConta{
         background: $background-padrao;
@@ -11,6 +13,8 @@
         border: none;
         border-radius: 10px;
         box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.2);
+        width: 100vw;
+        max-width: 1024px;
 
         .ImagemBanner{
             width: 7rem;
@@ -30,8 +34,27 @@
                 border: none;
                 border-radius: 5px;
                 margin-top: 0.7rem;
+                &:hover{
+                    background: #fff;
+                }
+            }
+        }
+    }    
+}
+
+@media (min-width: 1024px){
+    .BoxInfoConta{
+        .SubBoxInfoConta{
+            .ImagemBanner{
+                width: 11rem;
+            }
+            .InfoConta{
+                font-size: 19px;
+
+                .BotaoSair{
+                    font-size: 25px;
+                }
             }
         }
     }
-    
 }
