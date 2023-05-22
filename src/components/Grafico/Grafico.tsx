@@ -1,11 +1,13 @@
-import { estatisticasTime } from "../../TestLists/TestList"
+import { useContext } from "react";
 import ReactApexChart from 'react-apexcharts';
+import { AppContext } from "../../context/context";
 
 const Grafico = () => {
+    const {estatisticasDoTime} = useContext(AppContext)
     const series = [
         {
             name: "Gols",
-            data: Object.values(estatisticasTime.golsPorMinuto)
+            data: Object.values(estatisticasDoTime.golsPorMinuto)
         }
     ]
 
@@ -14,7 +16,7 @@ const Grafico = () => {
             type:'line' as const,
             foreColor: "#FFF"
         },
-        xaxis: {categories: Object.keys(estatisticasTime.golsPorMinuto)},
+        xaxis: {categories: Object.keys(estatisticasDoTime.golsPorMinuto)},
         toolbar: {tools: {download: false}},
         tooltip: {theme: 'dark'}
     }

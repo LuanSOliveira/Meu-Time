@@ -1,14 +1,14 @@
 import { useContext } from 'react'
 import styles from './BoxInfoPesquisa.module.scss'
 import { AppContext } from '../../context/context'
-import { listaTimesDaLiga } from '../../TestLists/TestList'
+import { ITimes } from '../../interfaces/Interfaces'
 
 const BoxInfoPesquisa = () => {
     const {paisSelecionado, setPaisSelecionado,
            temporadaSelecionada, setTemporadaSelecionada,
            ligaSelecionada, setLigaSelecionada,
            setListaDeTimes, setTimeSelecionado,
-           timeSelecionado,
+           timeSelecionado, usuarioLogado
         } = useContext(AppContext)
 
     function AtivarBotaoPesquisar():boolean{
@@ -29,7 +29,28 @@ const BoxInfoPesquisa = () => {
     }
 
     function PesquisarTimes():void{
-        setListaDeTimes(listaTimesDaLiga)
+        fetch(`https://v3.football.api-sports.io/teams?league=${ligaSelecionada.id}&season=${temporadaSelecionada}`,{
+            "method": "GET",
+            "headers": {"x-rapidapi-host": "v3.football.api-sports.io", "x-apisports-key": `${usuarioLogado.chave}`}
+        })
+        .then(response => response.json())
+        .then((data) =>{
+            let listaTimes: ITimes[] = []
+
+            data.response.map(
+                (timeLiga: any) =>{
+                    let time: ITimes = {
+                        id: timeLiga.team.id,
+                        name: timeLiga.team.name,
+                        code: timeLiga.team.code,
+                        country: timeLiga.team.country,
+                        logo: timeLiga.team.logo
+                    }
+                    listaTimes.push(time)
+                }
+            )
+            setListaDeTimes(listaTimes)
+        })
     }
 
     return(

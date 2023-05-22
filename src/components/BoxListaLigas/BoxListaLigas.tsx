@@ -6,7 +6,7 @@ import { useContext, useState } from 'react';
 const BoxListaLigas = () => {
     const [filtro, setFiltro] = useState('')
 
-    const {temporadaSelecionada, listaDeLigas} = useContext(AppContext)
+    const {paisSelecionado, temporadaSelecionada, listaDeLigas} = useContext(AppContext)
 
     return(
         <div className={styles.BoxListaLigas}>
@@ -24,12 +24,16 @@ const BoxListaLigas = () => {
                         (!filtro) 
                         ? 
                             listaDeLigas.map(
-                                (liga) => (liga.seasons.includes(temporadaSelecionada)) && <CardLiga key={liga.id} liga={liga}/>
+                                (liga) => (liga.seasons.includes(temporadaSelecionada) 
+                                           && liga.country.name === paisSelecionado.name) && 
+                                            <CardLiga key={liga.id} liga={liga}/>
                             )
                         :
                             listaDeLigas.map(
-                                (liga) => (liga.name.toLowerCase().includes(filtro.toLowerCase()) && liga.seasons.includes(temporadaSelecionada)) && 
-                                    <CardLiga key={liga.id} liga={liga}/>
+                                (liga) => (liga.name.toLowerCase().includes(filtro.toLowerCase()) 
+                                           && liga.seasons.includes(temporadaSelecionada) 
+                                           && liga.country.name === paisSelecionado.name) && 
+                                            <CardLiga key={liga.id} liga={liga}/>
                             )
                     }
                 </div>

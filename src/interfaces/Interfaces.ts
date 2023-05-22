@@ -28,6 +28,9 @@ export interface IContext{
     setLigaSelecionada: (ligaSelecionada:ILigas) => void;
     timeSelecionado: ITimes;
     setTimeSelecionado: (timeSelecionado:ITimes) => void;
+
+    estatisticasDoTime: IEstatisticas;
+    setEstatisticasDoTime: (estatisticasDoTime: IEstatisticas) => void;
 }
 
 export interface IPaises {
